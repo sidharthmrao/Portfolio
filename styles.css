@@ -1,0 +1,56 @@
+/* Custom CSS */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+}
+.project {
+  margin-bottom: 20px;
+}
+.project a {
+  font-weight: bold;
+}
+.project p {
+  margin: 5px 0;
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(100%);
+}
+footer {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 0;
+  text-align: center;
+  z-index: 1000;
+}
+.show-footer footer {
+  display: block;
+}
+
+/* Buttons */
+.btn-outline-dark {
+  color: #343a40;
+  border-color: #343a40;
+  box-shadow: none;
+}
+.btn-outline-dark:hover {
+  color: #fff;
+  background-color: #343a40;
+  border-color: #343a40;
+  box-shadow: none;
+}
+
+.btn_active {
+  color: #fff;
+  background-color: #212529;
+  border-color: #212529;
+}
