@@ -7,7 +7,8 @@ body {
 .container {
   max-width: 800px;
   margin: auto;
-  padding: 20px;
+  padding: 0px;
+  margin-top: 60px;
 }
 .project {
   margin-bottom: 20px;
@@ -23,14 +24,12 @@ body {
   filter: invert(100%);
 }
 footer {
-  display: none;
-  position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
   padding: 10px 0;
   text-align: center;
-  z-index: 1000;
+  /* z-index: 1000; */
 }
 .show-footer footer {
   display: block;
@@ -53,4 +52,15 @@ footer {
   color: #fff;
   background-color: #212529;
   border-color: #212529;
+}
+
+/* Add separator style */
+.separator {
+  border-top: 1px solid #dee2e6; /* Border style */
+  margin: 20px 0; /* Adjust margin as needed */
+}
+
+/* GitHub icon color */
+.fab.fa-github-square {
+  color: black;
 }
