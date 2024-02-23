@@ -12,32 +12,32 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
   <!-- Home Page Content -->
   <div class="container mt-5" id="home">
-    <h1 class="text-center mb-4">Sidharth Rao | Selected Projects</h1>
+    <h1 class="text-center mb-0">Sidharth Rao</h1>
+    <h4 style="color: rgb(80, 77, 77);" class="text-center mb-4">Selected Projects</h4>
 
     <!-- Buttons for project categories -->
-    <div class="text-center mb-4">
-      <a href="selected.html" target="_self"><button type="button" href="#" class="btn btn-outline-dark mr-2 btn_active">Selected</button></a>
-      <a href="3d_printing.html" target="_self"><button type="button" class="btn btn-outline-dark">Robotics</button></a>
-      <a href="optimization.html" target="_self"><button type="button" class="btn btn-outline-dark mr-2">Pathfinding Optimization</button></a>
-      <a href="3d_printing.html" target="_self"><button type="button" class="btn btn-outline-dark">Simulation</button></a>
-      <a href="3d_printing.html" target="_self"><button type="button" class="btn btn-outline-dark">Cryptography</button></a>
-      <a href="3d_printing.html" target="_self"><button type="button" class="btn btn-outline-dark">Apps</button></a>
-      <a href="3d_printing.html" target="_self"><button type="button" class="btn btn-outline-dark">Fun and Games</button></a>
-      <a href="3d_printing.html" target="_self"><button type="button" class="btn btn-outline-dark">3D Printing</button></a>
-      <a href="3d_printing.html" target="_self"><button type="button" class="btn btn-outline-dark">Random</button></a>
+    <div class="text-center mb-2">
+      <a href="selected.html" target="_self"><button type="button" href="#" class="btn btn-outline-dark mr-0 mb-2 btn_active">Selected</button></a>
+      <a href="3d_printing.html" target="_self"><button type="button" class="btn btn-outline-dark mr-0 mb-2">Robotics</button></a>
+      <a href="optimization.html" target="_self"><button type="button" class="btn btn-outline-dark mr-0 mb-2">Pathfinding Optimization</button></a>
+      <a href="3d_printing.html" target="_self"><button type="button" class="btn btn-outline-dark mr-0 mb-2">Simulation</button></a>
+      <a href="3d_printing.html" target="_self"><button type="button" class="btn btn-outline-dark mr-0 mb-2">Cryptography</button></a>
+      <a href="3d_printing.html" target="_self"><button type="button" class="btn btn-outline-dark mr-0 mb-2">Apps</button></a>
+      <a href="3d_printing.html" target="_self"><button type="button" class="btn btn-outline-dark mr-0 mb-2">Fun and Games</button></a>
+      <a href="3d_printing.html" target="_self"><button type="button" class="btn btn-outline-dark mr-0 mb-2">3D Printing</button></a>
+      <a href="3d_printing.html" target="_self"><button type="button" class="btn btn-outline-dark mr-0 mb-2">Random</button></a>
     </div>
 
     <section id="selected-projects">
       <!-- Project 1 -->
       <div class="project">
-        <h3>Project 1 <a href="https://github.com/your-github-repo" target="_blank"><i class="fab fa-github-square"></i></a></h3>
-        <div id="carouselProject1" class="carousel slide" data-ride="carousel" data-interval="false">
+        <h3>Global and Local Optimization | CEV <a href="https://github.com/cornellev/Local_and_Global_Planning" target="_blank"><i class="fab fa-github-square"></i></a></h3>
+        <div style="margin-top: 15px;" id="carouselProject1" class="carousel slide" data-ride="carousel" data-interval="false">
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="images/dog.jpg" class="d-block w-100" alt="Project 1 Image 1">
+              <img src="projects/global_local_opt/images/image_1.png" class="d-block w-100" alt="Project 1 Image 1">
             </div>
             <div class="carousel-item">
               <img src="images/dog.jpg" class="d-block w-100" alt="Project 1 Image 2">
@@ -52,7 +52,9 @@
             <span class="sr-only">Next</span>
           </a>
         </div>
-        <p>Description of Project 1.</p>
+        <p style="margin-top: 20px;">Created a custom simulation for occupancy grid-based planning algorithms.
+          Implemented various algorithms like RRT*, LQR, MPC and developed my own which outperformed RRT* by a
+          factor of 8. Connected everything to ROS simulators as well to incorporate into our autonomous vehicle pipeline.</p>
       </div>
 
       <!-- Separator -->

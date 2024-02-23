@@ -3,6 +3,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  margin-left: 10px;
 }
 .container {
   max-width: 800px;
@@ -11,6 +12,7 @@ body {
   margin-top: 60px;
 }
 .project {
+  margin-left: 10px;
   margin-bottom: 20px;
 }
 .project a {
@@ -21,7 +23,8 @@ body {
 }
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-  filter: invert(100%);
+  filter: invert(50%);
+  /* mix-blend-mode: difference; */
 }
 footer {
   bottom: 0;
@@ -57,7 +60,7 @@ footer {
 /* Add separator style */
 .separator {
   border-top: 1px solid #dee2e6; /* Border style */
-  margin: 20px 0; /* Adjust margin as needed */
+  margin: 20px 10px; /* Adjust margin as needed */
 }
 
 /* GitHub icon color */
