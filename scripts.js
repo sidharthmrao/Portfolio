@@ -25,6 +25,18 @@ let projects_list = {
     },
 }
 
+let about_page = {
+    "name": "Sidharth Rao",
+    "org": "",
+    "org-link": "",
+    "proj-link": "https://github.com/sidharthmrao",
+    "images": [
+        "projects/global_local_opt/images/image_1.png",
+        "projects/global_local_opt/images/image_2.gif",
+    ],
+    "description": "Created a custom simulation for occupancy grid-based planning algorithms. Implemented various algorithms like RRT*, LQR, MPC and developed my own which outperformed RRT* by a factor of 8. Connected everything to ROS simulators as well to incorporate into our autonomous vehicle pipeline."
+};
+
 let projects = {
     "selected": [
         projects_list.global_local_planning,
@@ -48,6 +60,7 @@ let projects = {
     "fun": [],
     "3d": [],
     "random": [],
+    "about": [about_page],
 };
 
 function interpretImage(img, active) {
@@ -142,7 +155,7 @@ function replaceContent(newActive, waitTime=800) {
     targetDiv.style.opacity = '0';
     document.getElementById("footer").style.opacity = '0';
     setTimeout(() => {
-            document.getElementById("subheading").innerText = activeName + " Projects";
+            document.getElementById("subheading").innerText = activeName + (activeName === "About" ? " Me" : " Projects");
             targetDiv.innerHTML = html;
             targetDiv.style.opacity = '1';
             document.getElementById("subheading").style.opacity = '1';
