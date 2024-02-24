@@ -166,6 +166,15 @@ let projects_list = {
         "proj-link": "https://www.iamsrao.com/FlappyBird/",
         "images": [],
         "description": "Like most of my projects, I made this while bored in a plane."
+    },
+
+    snake: {
+        "name": "Java Snake",
+        "org": "",
+        "org-link": "",
+        "proj-link": "https://github.com/sidharthmrao/Snake",
+        "images": [],
+        "description": "Made this for fun and to practice proper Java development, testing, etc."
     }
 }
 
@@ -227,12 +236,14 @@ let projects = {
 
     "apps": [
         projects_list.snoway,
+        projects_list.snake,
         projects_list.taskninja,
         projects_list.rovicare_ocr,
     ],
 
     "fun": [
         projects_list.flappy_bird,
+        projects_list.snake,
         projects_list.volume_perception,
         projects_list.jeopardy,
         projects_list.n_body,
