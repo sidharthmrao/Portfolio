@@ -194,6 +194,50 @@ let projects_list = {
         "images": [],
         "description": "A very ineffective chess bot which used Double Deep Q-Learning (RL) and a massive excel sheet. I made it for a summer camp at UTD in 8th grade."
     },
+
+    laptop_mini_stand: {
+        "name": "Laptop Mini Stand",
+        "org": "",
+        "org-link": "",
+        "proj-link": "https://cad.onshape.com/documents/7ec62c9df1f3c74669907c1e/w/db8baed7f56487856bdbec28/e/dcdc957598e3b933402b61ac?renderMode=0&uiState=65d9b3cf26fcd7072ec1d8d8",
+        "images": [
+            "projects/laptop_mini_stand.png"
+        ],
+        "description": "Tiny stands for my laptop to allow more room for the fans, and a magnetic case."
+    },
+
+    wire_router: {
+        "name": "Wire Router",
+        "org": "",
+        "org-link": "",
+        "proj-link": "https://cad.onshape.com/documents/2d5bfd0d05153631c7fb5a39/w/4693ddbb1e8d8400c3bddfdf/e/4762ad6ac525deed48d1f93c?renderMode=0&uiState=65d9b4d726fcd7072ec1d947",
+        "images": [
+            "projects/wire_router.png"
+        ],
+        "description": "Attachment to the side of my desk to route wires."
+    },
+
+    "monitor_stand": {
+        "name": "Monitor Stand",
+        "org": "",
+        "org-link": "",
+        "proj-link": "https://cad.onshape.com/documents/2d5bfd0d05153631c7fb5a39/w/4693ddbb1e8d8400c3bddfdf/e/4762ad6ac525deed48d1f93c?renderMode=0&uiState=65d9b5c51e298329479f9a7c",
+        "images": [
+            "projects/monitor_stand.png"
+        ],
+        "description": "Modular stand for my monitor. In the image above attached is a phone stand."
+    },
+
+    "laptop_stand": {
+        "name": "Laptop Stand",
+        "org": "",
+        "org-link": "",
+        "proj-link": "https://cad.onshape.com/documents/d874752dc1e36f815bf97705/w/b3c29794a9e37c985a2369d2/e/17810d8bd7937d8d2b413a5b?renderMode=0&uiState=65d9b67bc4c315613204155f",
+        "images": [
+            "projects/laptop_stand.png"
+        ],
+        "description": "Laptop stand for my desk."
+    }
 }
 
 // {
@@ -221,6 +265,7 @@ let projects = {
     "recent": [
         projects_list.global_local_planning,
         projects_list.autobrake,
+        projects_list.laptop_mini_stand,
         projects_list.mcdiver,
         projects_list.n_body,
         projects_list.snake,
@@ -283,7 +328,12 @@ let projects = {
         projects_list.chess_bot,
     ],
 
-    "3d": [],
+    "3d": [
+        projects_list.laptop_mini_stand,
+        projects_list.wire_router,
+        projects_list.monitor_stand,
+        projects_list.laptop_stand,
+    ],
 
     "random": [
         projects_list.decision_maker,
