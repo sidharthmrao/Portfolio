@@ -1,35 +1,48 @@
 let current_active = "selected";
 
+let projects_list = {
+    autoboard: {
+        "name": "AutoBoard",
+        "org": "Choate Robotics",
+        "org-link": "https://github.com/Choate-Robotics",
+        "proj-link": "https://github.com/Choate-Robotics/AutoBOARd",
+        "images": [
+            "projects/autoboard/images/image_1.png",
+        ],
+        "description": "Created a custom simulation for occupancy grid-based planning algorithms. Implemented various algorithms like RRT*, LQR, MPC and developed my own which outperformed RRT* by a factor of 8. Connected everything to ROS simulators as well to incorporate into our autonomous vehicle pipeline."
+    },
+
+    global_local_planning: {
+        "name": "Global and Local Planning",
+        "org": "CEV",
+        "org-link": "https://www.cornellelectricvehicles.org/",
+        "proj-link": "https://github.com/cornellev/Local_and_Global_Planning",
+        "images": [
+            "projects/global_local_opt/images/image_1.png",
+            "projects/global_local_opt/images/image_2.gif",
+        ],
+        "description": "Created a custom simulation for occupancy grid-based planning algorithms. Implemented various algorithms like RRT*, LQR, MPC and developed my own which outperformed RRT* by a factor of 8. Connected everything to ROS simulators as well to incorporate into our autonomous vehicle pipeline."
+    },
+}
+
 let projects = {
     "selected": [
-        {
-            "name": "Global and Local Planning",
-            "org": "CEV",
-            "org-link": "https://www.cornellelectricvehicles.org/",
-            "proj-link": "https://github.com/cornellev/Local_and_Global_Planning",
-            "images": [
-                "projects/global_local_opt/images/image_1.png",
-                "projects/global_local_opt/images/image_2.gif",
-            ],
-            "description": "Created a custom simulation for occupancy grid-based planning algorithms. Implemented various algorithms like RRT*, LQR, MPC and developed my own which outperformed RRT* by a factor of 8. Connected everything to ROS simulators as well to incorporate into our autonomous vehicle pipeline."
-        },
-
-        {
-            "name": "AutoBoard",
-            "org": "Choate Robotics",
-            "org-link": "https://github.com/Choate-Robotics",
-            "proj-link": "https://github.com/Choate-Robotics/AutoBOARd",
-            "images": [
-                "projects/autoboard/images/image_1.png",
-                "images/dog.jpg",
-            ],
-            "description": "Created a custom simulation for occupancy grid-based planning algorithms. Implemented various algorithms like RRT*, LQR, MPC and developed my own which outperformed RRT* by a factor of 8. Connected everything to ROS simulators as well to incorporate into our autonomous vehicle pipeline."
-        },
+        projects_list.global_local_planning,
+        projects_list.autoboard,
     ],
 
-    "robotics": [],
-    "pathfinding": [],
-    "simulation": [],
+    "robotics": [
+        projects_list.autoboard,
+        projects_list.global_local_planning,
+    ],
+    "pathfinding": [
+        projects_list.global_local_planning,
+        projects_list.autoboard,
+    ],
+    "simulation": [
+        projects_list.global_local_planning,
+        projects_list.autoboard,
+    ],
     "cryptography": [],
     "apps": [],
     "fun": [],
@@ -69,28 +82,32 @@ function interpretProject(project, num) {
     project_html += `<div class="carousel-inner">`;
 
     let active = true;
+    let size = 0;
     for (let img in images) {
         project_html += interpretImage(images[img], active);
         active = false;
+        size += 1;
     }
 
     project_html += `</div>`;
 
-    project_html += `<a class="carousel-control-prev" href="#` + 'Project' + num + `" role="button" data-slide="prev">`;
-    project_html += `
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-    </a>`;
+    if (size > 1) {
+        project_html += `<a class="carousel-control-prev" href="#` + 'Project' + num + `" role="button" data-slide="prev">`;
+        project_html += `
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>`;
+
+        project_html += `
+        <a class="carousel-control-next" href="#` + 'Project' + num + `" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+        `;
+    }  
 
     project_html += `
-    <a class="carousel-control-next" href="#` + 'Project' + num + `" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-    </a></div>
-    `;
-
-    project_html += `
-    <p style="margin-top: 20px;">` + description + `</p>
+    </div><p style="margin-top: 20px;">` + description + `</p>
     </div><hr class="separator">
     `;
 
