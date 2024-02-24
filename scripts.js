@@ -1,4 +1,4 @@
-let current_active = "selected";
+let current_active = "recent";
 
 let projects_list = {
     autoboard: {
@@ -218,33 +218,48 @@ let about_page = {
 };
 
 let projects = {
-    "selected": [
+    "recent": [
         projects_list.global_local_planning,
-        projects_list.autoboard,
+        projects_list.autobrake,
+        projects_list.mcdiver,
         projects_list.n_body,
+        projects_list.snake,
+        projects_list.autoboard,
         projects_list.maze_generator,
+        // projects_list.prng_system,
+        // projects_list.decentralized_voting,
+        // projects_list.robotpy_toolkit,
+        // projects_list.flappy_bird,
+        // projects_list.random_sun_tzu_quote,
+        // projects_list.decision_maker,
+        // projects_list.taskninja,
+        // projects_list.inv_kinematics,
+        // projects_list.jeopardy,
+        // projects_list.snoway,
+        // projects_list.cronicloud,
+        // projects_list.rovicare_ocr,
+        // projects_list.chess_bot
     ],
 
     "robotics": [
-        projects_list.autoboard,
-        projects_list.global_local_planning,
         projects_list.autobrake,
+        projects_list.global_local_planning,
+        projects_list.autoboard,
         projects_list.robotpy_toolkit,
         projects_list.inv_kinematics,
     ],
 
     "pathfinding": [
-        projects_list.maze_generator,
-        projects_list.mcdiver,
         projects_list.global_local_planning,
-        projects_list.autoboard,
+        projects_list.mcdiver,
+        projects_list.maze_generator,
     ],
 
     "simulation": [
-        projects_list.n_body,
-        projects_list.inv_kinematics,
         projects_list.global_local_planning,
+        projects_list.n_body,
         projects_list.autoboard,
+        projects_list.inv_kinematics,
     ],
 
     "cryptography": [
@@ -257,15 +272,14 @@ let projects = {
         projects_list.taskninja,
         projects_list.cronicloud,
         projects_list.rovicare_ocr,
-        projects_list.snake,
     ],
 
     "fun": [
-        projects_list.flappy_bird,
-        projects_list.snake,
-        projects_list.volume_perception,
-        projects_list.jeopardy,
         projects_list.n_body,
+        projects_list.snake,
+        projects_list.flappy_bird,
+        projects_list.jeopardy,
+        projects_list.volume_perception,
         projects_list.chess_bot,
     ],
 
