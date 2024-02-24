@@ -42,6 +42,7 @@ footer {
   padding: 10px 0;
   text-align: center;
   /* z-index: 1000; */
+  transition-duration: 750ms;
 }
 .show-footer footer {
   display: block;
@@ -52,21 +53,21 @@ footer {
   color: #cfc1c1;
   border-color: #343a40;
   box-shadow: none;
-  transition-duration: 500ms;
+  transition-duration: 600ms;
 }
 .btn-outline-dark:hover {
   color: #fff;
   background-color: #343a40;
   border-color: #343a40;
   box-shadow: none;
-  transition-duration: 500ms;
+  transition-duration: 400ms;
 }
 
 .btn_active {
   color: #fff;
   background-color: #212529;
   border-color: #212529;
-  transition-duration: 500ms;
+  transition-duration: 600ms;
 }
 
 /* Add separator style */
