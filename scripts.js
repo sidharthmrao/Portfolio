@@ -142,9 +142,9 @@ function replaceContent(newActive, waitTime=800) {
     targetDiv.style.opacity = '0';
     document.getElementById("footer").style.opacity = '0';
     setTimeout(() => {
+            document.getElementById("subheading").innerText = activeName + " Projects";
             targetDiv.innerHTML = html;
             targetDiv.style.opacity = '1';
-            document.getElementById("subheading").innerText = activeName + " Projects";
             document.getElementById("subheading").style.opacity = '1';
             document.getElementById("footer").style.opacity = '1';
         }, waitTime);

@@ -42,7 +42,7 @@ footer {
   padding: 10px 0;
   text-align: center;
   /* z-index: 1000; */
-  transition-duration: 750ms;
+  transition: opacity .75s ease-in-out;
 }
 .show-footer footer {
   display: block;
