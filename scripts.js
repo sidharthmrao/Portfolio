@@ -12,6 +12,24 @@ let projects_list = {
         "description": "Created a custom simulation for occupancy grid-based planning algorithms. Implemented various algorithms like RRT*, LQR, MPC and developed my own which outperformed RRT* by a factor of 8. Connected everything to ROS simulators as well to incorporate into our autonomous vehicle pipeline."
     },
 
+    decentralized_voting: {
+        "name": "Decentralized, Encrypted Voting System",
+        "org": "",
+        "org-link": "",
+        "proj-link": "https://github.com/sidharthmrao/Cryptography_DS/tree/main/personal_cryptosystems/rust_schulze",
+        "images": [],
+        "description": "Project I worked on for my Cryptography DS. Used RSA and repeated hashing, along with decentralization principles to create a verifiable Schulze voting system that could function anonymously, securely, and without a central server. Used Rust to create a final product."
+    },
+
+    prng_system: {
+        "name": "PRNG-Based Cryptosystem",
+        "org": "",
+        "org-link": "",
+        "proj-link": "https://github.com/sidharthmrao/Cryptography_DS/tree/main/personal_cryptosystems/random_seed_cryptography",
+        "images": [],
+        "description": "Project I worked on for my Cryptography DS as a replacement for one-time-pad, which used a set random seed to regenerate new one-time-pad codes, allowing for users to indefinitely share messages with n-bit security. Used Python for the final product."
+    },
+
     global_local_planning: {
         "name": "Global and Local Planning",
         "org": "CEV",
@@ -23,7 +41,142 @@ let projects_list = {
         ],
         "description": "Created a custom simulation for occupancy grid-based planning algorithms. Implemented various algorithms like RRT*, LQR, MPC and developed my own which outperformed RRT* by a factor of 8. Connected everything to ROS simulators as well to incorporate into our autonomous vehicle pipeline."
     },
+
+    robotpy_toolkit: {
+        "name": "Robotpy-Toolkit-7407",
+        "org": "Choate Robotics",
+        "org-link": "https://github.com/Choate-Robotics",
+        "proj-link": "https://github.com/Choate-Robotics/7407-RobotPy-Toolkit",
+        "images": [],
+        "description": "Python library toolkit for our team and other FRC teams to use across years. Created tools for automatic robot path planning and position tracking based on cameras. Also wrote interfaces for sensors and motors commonly used by FRC teams."
+    },
+
+    inv_kinematics: {
+        "name": "Inverse Kinematics Simulation with Gradient Descent and Jacobian Inverse Matrices",
+        "org": "",
+        "org-link": "",
+        "proj-link": "https://editor.p5js.org/sidharthmrao/sketches/XpaS7dwnt",
+        "images": [],
+        "description": "Project for my linear algebra class in which a partner and I used gradient descent and a formula derived using Jacobian inverses to simulate a robot arm optimally routing to a target."
+    },
+
+    maze_generator: {
+        "name": "Maze Generator and Path Finder",
+        "org": "",
+        "org-link": "",
+        "proj-link": "https://github.com/sidharthmrao/Search_Algorithms",
+        "images": [],
+        "description": "Randomly generates a maze with various algorithms, including DFS and minimum spanning trees. Solves it with various pathfinding algorithms, including A*, DFS, and BFS."
+    },
+
+    n_body: {
+        "name": "N-Body Simulation",
+        "org": "",
+        "org-link": "",
+        "proj-link": "https://github.com/sidharthmrao/NBodySimulation",
+        "images": [],
+        "description": "Multithreaded N-Body-Problem simulator I wrote in Python using PyGame. Includes time and sampling controls. I was inspired to work on this project after reading the book “The Three-Body Problem”, which mentions that no formula or pattern has been found for the path of three bodies attracted by gravity. I wanted to see this for myself, so I created a simulation of N gravitational bodies, with cool features like movement trails, zooming, speed up/slow down, center of mass visualization, and more."
+    },
+
+    mcdiver: {
+        "name": "McDiver Maze Search",
+        "org": "Cornell CS 2110",
+        "org-link": "https://www.cs.cornell.edu/courses/cs2110/2023fa/assignments/a6_handout.html",
+        "proj-link": "",
+        "images": [],
+        "description": "Project for my Object Oriented Programming and Data Structures course at Cornell University. Came up with our own algorithms to first do a blind search of the maze to find the destination (as in, could only see neighboring squares), and another algorithm for finding the path to a destination node within a maximum amount of steps, while collecting the maximum amount of coins. Our first algorithm involved a dfs walk, which used a manhattan distance heuristic for path selection and backtraced to previous paths when the current path seemed to be worsening. Our second algorithm involved creating a subgraph of just coin nodes, and then using Dijkstra’s algorithm to find the shortest route between each coin. Then, we ran a memoized DFS on the coin subgraph with the known route distances, and found the maximum coin value path to the destination. For situations where there were too many scenarios to search in a reasonable amount of time, a greedy search algorithm with limited randomness was used to select the best path to search next. Our algorithm was the second best out of over 600 students on the leaderboard."
+    },
+
+    autobrake: {
+        "name": "LiDAR-Based AutoBrake",
+        "org": "CEV",
+        "org-link": "https://www.cornellelectricvehicles.org/",
+        "proj-link": "https://github.com/sidharthmrao/ArduinoPractice/tree/main/Serial1",
+        "images": [],
+        "description": "Integrated an RPLidar, Ubuntu Raspberry pi, and Arduino along with motors in our autonomous vehicle to automatically disable the throttle and activate an auto-brake when objects above a certain size threshold were detected within a certain distance of the vehicle. Used ROS, ROSSerial, C++ (Arduino), Python."
+    },
+
+    snoway: {
+        "name": "Snoway",
+        "org": "BB&N Hackathon",
+        "org-link": "https://bbn-hacks.devpost.com/",
+        "proj-link": "https://github.com/sidharthmrao/Snoway",
+        "images": [],
+        "description": "Social media app two partners and I created using React Native, MongoDB, and Flask, where users could share photos of fun spots to play with snow in winter and review them."
+    },
+
+    rovicare_ocr: {
+        "name": "OCR to Differential Diagnosis",
+        "org": "Rovicare",
+        "org-link": "https://www.rovicare.com/",
+        "proj-link": "https://github.com/sidharthmrao/RovicareOCR",
+        "images": [],
+        "description": "Scanned handwritten doctors’ notes for various diseases and symptoms, and created a differential diagnosis mapping. Used Python, Pandas, Numpy, PyTesseract, and GCP."
+    },
+
+    taskninja: {
+        "name": "TaskNinja CLI",
+        "org": "",
+        "org-link": "",
+        "proj-link": "https://github.com/sidharthmrao/TaskNinja",
+        "images": [],
+        "description": "CLI written in Rust to manage my tasks, TODOs, and appointments, which interfaces with Google Calendar."
+    },
+
+    jeopardy: {
+        "name": "Multivariable Calculus Jeopardy",
+        "org": "",
+        "org-link": "",
+        "proj-link": "https://www.iamsrao.com/jeopardy/",
+        "images": [],
+        "description": "Jeopardy I made from scratch for one of my multivariable calculus final projects in 11th grade.",
+    },
+
+    volume_perception: {
+        "name": "Volume Perception Game",
+        "org": "",
+        "org-link": "",
+        "proj-link": "https://www.iamsrao.com/volume_perception/",
+        "images": [],
+        "description": "Game my friend and I made to test peoples' volume perception skills, as kind of a social experiment."
+    },
+
+    decision_maker: {
+        "name": "Decision Maker",
+        "org": "",
+        "org-link": "",
+        "proj-link": "https://www.iamsrao.com/decision_maker/",
+        "images": [],
+        "description": "Unironically helpful for me. What better way to know what you truly want than for someone to take away your choice?"
+    },
+
+    random_sun_tzu_quote: {
+        "name": "Random Sun Tzu Quote",
+        "org": "",
+        "org-link": "",
+        "proj-link": "https://www.iamsrao.com/random_sun_tzu/",
+        "images": [],
+        "description": "Raw inspiration at the click of the reload button."
+    },
+
+    flappy_bird: {
+        "name": "Flappy bird lol",
+        "org": "",
+        "org-link": "",
+        "proj-link": "https://www.iamsrao.com/FlappyBird/",
+        "images": [],
+        "description": "Like most of my projects, I made this while bored in a plane."
+    }
 }
+
+// {
+//     "name": "",
+//     "org": "",
+//     "org-link": "",
+//     "proj-link": "",
+//     "images": [],
+//     "description": ""
+// },
 
 let about_page = {
     "name": "Sidharth Rao",
@@ -41,25 +194,57 @@ let projects = {
     "selected": [
         projects_list.global_local_planning,
         projects_list.autoboard,
+        projects_list.n_body,
+        projects_list.maze_generator,
     ],
 
     "robotics": [
         projects_list.autoboard,
         projects_list.global_local_planning,
+        projects_list.autobrake,
+        projects_list.robotpy_toolkit,
+        projects_list.inv_kinematics,
     ],
+
     "pathfinding": [
+        projects_list.maze_generator,
+        projects_list.mcdiver,
         projects_list.global_local_planning,
         projects_list.autoboard,
     ],
+
     "simulation": [
+        projects_list.n_body,
+        projects_list.inv_kinematics,
         projects_list.global_local_planning,
         projects_list.autoboard,
     ],
-    "cryptography": [],
-    "apps": [],
-    "fun": [],
+
+    "cryptography": [
+        projects_list.decentralized_voting,
+        projects_list.prng_system
+    ],
+
+    "apps": [
+        projects_list.snoway,
+        projects_list.taskninja,
+        projects_list.rovicare_ocr,
+    ],
+
+    "fun": [
+        projects_list.flappy_bird,
+        projects_list.volume_perception,
+        projects_list.jeopardy,
+        projects_list.n_body,
+    ],
+
     "3d": [],
-    "random": [],
+
+    "random": [
+        projects_list.decision_maker,
+        projects_list.random_sun_tzu_quote,
+    ],
+
     "about": [about_page],
 };
 
