@@ -97,7 +97,7 @@ function interpretProject(project, num) {
     return project_html;
 }
 
-function replaceContent(newActive) {
+function replaceContent(newActive, waitTime=800) {
     // Current active button
     const activeButton = document.getElementById(current_active);
     activeButton.classList.remove('btn_active')
@@ -113,7 +113,7 @@ function replaceContent(newActive) {
         html += interpretProject(projects[newActive][project], project);
     }
 
-    document.getElementById("subheading").innerText = activeName + " Projects";
+    document.getElementById("subheading").style.opacity = '0';
 
     const targetDiv = document.getElementById('projects');
 
@@ -125,5 +125,17 @@ function replaceContent(newActive) {
     setTimeout(() => {
             targetDiv.innerHTML = html;
             targetDiv.style.opacity = '1';
-        }, 0);
+            document.getElementById("subheading").innerText = activeName + " Projects";
+            document.getElementById("subheading").style.opacity = '1';
+        }, waitTime);
+}
+
+function boot() {
+    document.body.style.opacity = 0;
+
+    replaceContent(current_active, 0);
+
+    setTimeout(() => {
+        document.body.style.opacity = 100;
+    }, 300);
 }

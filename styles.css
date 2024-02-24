@@ -1,11 +1,14 @@
 /* Custom CSS */
 body {
+  opacity: 0;
   font-family: Roboto;
   margin: 0;
   padding: 0;
   margin-left: 10px;
   background-color: #000;
   color: white;
+
+  transition: opacity 1.5s ease-in-out;
 }
 .container {
   max-width: 800px;
@@ -14,6 +17,7 @@ body {
   margin-top: 60px;
   z-index: 100;
 }
+
 .project {
   margin-left: 10px;
   margin-bottom: 20px;
@@ -48,18 +52,21 @@ footer {
   color: #cfc1c1;
   border-color: #343a40;
   box-shadow: none;
+  transition-duration: 500ms;
 }
 .btn-outline-dark:hover {
   color: #fff;
   background-color: #343a40;
   border-color: #343a40;
   box-shadow: none;
+  transition-duration: 500ms;
 }
 
 .btn_active {
   color: #fff;
   background-color: #212529;
   border-color: #212529;
+  transition-duration: 500ms;
 }
 
 /* Add separator style */
@@ -124,6 +131,10 @@ animation: zoom 16s alternate infinite;
   margin: 40px;
 }
 
-#selected-projects {
-  transition: opacity 0.5s ease-in-out;
+#projects {
+  transition: opacity .75s ease-in-out;
+}
+
+#subheading {
+  transition: opacity .75s ease-in-out;
 }
