@@ -453,6 +453,8 @@ function replaceContent(newActive, waitTime=800) {
 
     document.getElementById("subheading").style.opacity = '0';
 
+    document.getElementById("background").classList.toggle('transition');
+
 
     const targetDiv = document.getElementById('projects');
 
@@ -468,6 +470,7 @@ function replaceContent(newActive, waitTime=800) {
             targetDiv.style.opacity = '1';
             document.getElementById("subheading").style.opacity = '1';
             document.getElementById("footer").style.opacity = '1';
+            document.getElementById("background").classList.toggle('transition');;
         }, waitTime);
 }
 
