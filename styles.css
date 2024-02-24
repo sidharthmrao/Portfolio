@@ -1,7 +1,8 @@
 /* Custom CSS */
 body {
   opacity: 0;
-  font-family: Roboto;
+  font-family: "Montserrat", sans-serif;
+  /* font-family: Roboto; */
   margin: 0;
   padding: 0;
   margin-left: 10px;
@@ -26,7 +27,7 @@ body {
 }
 .project a {
   font-weight: bold;
-  color: rgb(66, 82, 209);
+  color: #F01AFF;
 }
 .project p {
   margin: 5px 0;
@@ -58,23 +59,24 @@ footer {
 }
 .btn-outline-dark:hover {
   color: #fff;
-  background-color: #343a40;
+  background-color: transparent;
   border-color: #343a40;
-  box-shadow: none;
+  border-color: #F01AFF;;
   transition-duration: 400ms;
 }
 
 .btn_active {
   color: #fff;
-  background-color: #212529;
-  border-color: #212529;
+  border-color: #F01AFF;;
   transition-duration: 600ms;
+  box-shadow: #F01AFF 0px 0px 5px 0px;
 }
 
 /* Add separator style */
 .separator {
-  border-top: 1px solid #dee2e6; /* Border style */
-  margin: 20px 10px; /* Adjust margin as needed */
+  border-top: 1px solid #878c91;
+  opacity: 0.5;
+  margin: 20px 10px;
 }
 
 /* GitHub icon color */
@@ -140,4 +142,5 @@ animation: zoom 16s alternate infinite;
 
 #subheading {
   transition: opacity .75s ease-in-out;
+  color: #F01AFF;
 }
