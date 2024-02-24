@@ -1,3 +1,4 @@
+let default_active = "recent";
 let current_active = "recent";
 
 let projects_list = {
@@ -56,7 +57,7 @@ let projects_list = {
         "org": "",
         "org-link": "",
         "proj-link": "https://editor.p5js.org/sidharthmrao/sketches/XpaS7dwnt",
-        "images": [],
+        "images": ["projects/inv_kinematics/inv.png"],
         "description": "Project for my linear algebra class in which a partner and I used gradient descent and a formula derived using Jacobian inverses to simulate a robot arm optimally routing to a target."
     },
 
@@ -65,7 +66,7 @@ let projects_list = {
         "org": "",
         "org-link": "",
         "proj-link": "https://github.com/sidharthmrao/Search_Algorithms",
-        "images": [],
+        "images": ["projects/maze/maze_1.png"],
         "description": "Randomly generates a maze with various algorithms, including DFS and minimum spanning trees. Solves it with various pathfinding algorithms, including A*, DFS, and BFS."
     },
 
@@ -74,7 +75,10 @@ let projects_list = {
         "org": "",
         "org-link": "",
         "proj-link": "https://github.com/sidharthmrao/NBodySimulation",
-        "images": [],
+        "images": [
+            "projects/n_body/n_body_1.png",
+            "projects/n_body/n_body_2.png",
+        ],
         "description": "Multithreaded N-Body-Problem simulator I wrote in Python using PyGame. Includes time and sampling controls. I was inspired to work on this project after reading the book “The Three-Body Problem”, which mentions that no formula or pattern has been found for the path of three bodies attracted by gravity. I wanted to see this for myself, so I created a simulation of N gravitational bodies, with cool features like movement trails, zooming, speed up/slow down, center of mass visualization, and more."
     },
 
@@ -83,7 +87,9 @@ let projects_list = {
         "org": "Cornell CS 2110",
         "org-link": "https://www.cs.cornell.edu/courses/cs2110/2023fa/assignments/a6_handout.html",
         "proj-link": "",
-        "images": [],
+        "images": [
+            "projects/mcdiver/mcdiver.png",
+        ],
         "description": "Project for my Object Oriented Programming and Data Structures course at Cornell University. Came up with our own algorithms to first do a blind search of the maze to find the destination (as in, could only see neighboring squares), and another algorithm for finding the path to a destination node within a maximum amount of steps, while collecting the maximum amount of coins. Our first algorithm involved a dfs walk, which used a manhattan distance heuristic for path selection and backtraced to previous paths when the current path seemed to be worsening. Our second algorithm involved creating a subgraph of just coin nodes, and then using Dijkstra’s algorithm to find the shortest route between each coin. Then, we ran a memoized DFS on the coin subgraph with the known route distances, and found the maximum coin value path to the destination. For situations where there were too many scenarios to search in a reasonable amount of time, a greedy search algorithm with limited randomness was used to select the best path to search next. Our algorithm was the second best out of over 600 students on the leaderboard."
     },
 
@@ -128,7 +134,10 @@ let projects_list = {
         "org": "",
         "org-link": "",
         "proj-link": "https://www.iamsrao.com/jeopardy/",
-        "images": [],
+        "images": [
+            "projects/jeopardy/jeo_1.png",
+            "projects/jeopardy/jeo_2.png",
+        ],
         "description": "Jeopardy I made from scratch for one of my multivariable calculus final projects in 11th grade.",
     },
 
@@ -156,7 +165,7 @@ let projects_list = {
         "org-link": "",
         "proj-link": "https://www.iamsrao.com/random_sun_tzu/",
         "images": [],
-        "description": "Raw inspiration at the click of the reload button."
+        "description": "Life advice at the click of the reload button."
     },
 
     flappy_bird: {
@@ -164,7 +173,9 @@ let projects_list = {
         "org": "",
         "org-link": "",
         "proj-link": "https://www.iamsrao.com/FlappyBird/",
-        "images": [],
+        "images": [
+            "projects/flappy_bird/flappy.png",
+        ],
         "description": "Like most of my projects, I made this while bored in a plane."
     },
 
@@ -173,7 +184,9 @@ let projects_list = {
         "org": "",
         "org-link": "",
         "proj-link": "https://github.com/sidharthmrao/Snake",
-        "images": [],
+        "images": [
+            "projects/snake/game_over.png",
+        ],
         "description": "Made this for fun and to practice proper Java development, testing, etc."
     },
 
@@ -217,7 +230,7 @@ let projects_list = {
         "description": "Attachment to the side of my desk to route wires."
     },
 
-    "monitor_stand": {
+    monitor_stand: {
         "name": "Monitor Stand",
         "org": "",
         "org-link": "",
@@ -228,7 +241,7 @@ let projects_list = {
         "description": "Modular stand for my monitor. In the image above attached is a phone stand."
     },
 
-    "laptop_stand": {
+    laptop_stand: {
         "name": "Laptop Stand",
         "org": "",
         "org-link": "",
@@ -343,6 +356,10 @@ let projects = {
     "about": [about_page],
 };
 
+function addParam(v) {
+    window.location.search += '&' + v;
+}
+
 function interpretImage(img, active) {
     if (active) {
         return `
@@ -415,6 +432,17 @@ function replaceContent(newActive, waitTime=800) {
     const newActiveButton = document.getElementById(newActive);
     newActiveButton.classList.add('btn_active');
     current_active = newActive;
+
+    const urlParams = new URLSearchParams(window.location.search);
+    urlParams.set('active', newActive);
+    
+    // Write the new URL if not the default state, else remove the active param
+    if (newActive !== default_active) {
+        window.history.replaceState({}, '', window.location.pathname + '?' + urlParams.toString());
+    } else {
+        window.history.replaceState({}, '', window.location.pathname);
+    }
+
     const activeName = newActiveButton.innerText;
 
     let html = ``;
@@ -444,9 +472,16 @@ function replaceContent(newActive, waitTime=800) {
 }
 
 function boot() {
+    const urlParams = new URLSearchParams(window.location.search);
+
     document.body.style.opacity = 0;
 
-    replaceContent(current_active, 0);
+    if (urlParams.has('active')) {
+        const active = urlParams.get('active');
+        replaceContent(active, 0);
+    } else {
+        replaceContent(default_active, 0);
+    }
 
     setTimeout(() => {
         document.body.style.opacity = 100;
