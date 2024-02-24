@@ -175,7 +175,25 @@ let projects_list = {
         "proj-link": "https://github.com/sidharthmrao/Snake",
         "images": [],
         "description": "Made this for fun and to practice proper Java development, testing, etc."
-    }
+    },
+
+    cronicloud: {
+        "name": "CroniCloud",
+        "org": "",
+        "org-link": "",
+        "proj-link": "https://github.com/sidharthmrao/CroniCloud",
+        "images": [],
+        "description": "App I made with electron to monitor my Cron backup commands status and history."
+    },
+
+    chess_bot: {
+        "name": "Chess AI Bot",
+        "org": "UT Dallas",
+        "org-link": "https://www.utdallas.edu/",
+        "proj-link": "https://github.com/sidharthmrao/Chess_AI_Bot",
+        "images": [],
+        "description": "A very ineffective chess bot which used Double Deep Q-Learning (RL) and a massive excel sheet. I made it for a summer camp at UTD in 8th grade."
+    },
 }
 
 // {
@@ -236,9 +254,10 @@ let projects = {
 
     "apps": [
         projects_list.snoway,
-        projects_list.snake,
         projects_list.taskninja,
+        projects_list.cronicloud,
         projects_list.rovicare_ocr,
+        projects_list.snake,
     ],
 
     "fun": [
@@ -247,6 +266,7 @@ let projects = {
         projects_list.volume_perception,
         projects_list.jeopardy,
         projects_list.n_body,
+        projects_list.chess_bot,
     ],
 
     "3d": [],
