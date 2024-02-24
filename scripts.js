@@ -487,3 +487,5 @@ function boot() {
         document.body.style.opacity = 100;
     }, 300);
 }
+
+window.onload = boot;
