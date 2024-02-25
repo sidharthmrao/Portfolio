@@ -277,9 +277,9 @@ let about_page = {
 let projects = {
     "featured": [
         projects_list.global_local_planning,
-        projects_list.autobrake,
-        projects_list.laptop_mini_stand,
-        projects_list.mcdiver,
+        // projects_list.autobrake,
+        // projects_list.laptop_mini_stand,
+        // projects_list.mcdiver,
         projects_list.n_body,
         projects_list.snake,
         projects_list.autoboard,
