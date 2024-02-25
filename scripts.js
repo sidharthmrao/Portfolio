@@ -1,5 +1,5 @@
-let default_active = "recent";
-let current_active = "recent";
+let default_active = "featured";
+let current_active = "featured";
 
 let projects_list = {
     autoboard: {
@@ -275,7 +275,7 @@ let about_page = {
 };
 
 let projects = {
-    "recent": [
+    "featured": [
         projects_list.global_local_planning,
         projects_list.autobrake,
         projects_list.laptop_mini_stand,
