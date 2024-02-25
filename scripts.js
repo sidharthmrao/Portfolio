@@ -300,8 +300,8 @@ let projects = {
     ],
 
     "robotics": [
-        projects_list.autobrake,
         projects_list.global_local_planning,
+        projects_list.autobrake,
         projects_list.autoboard,
         projects_list.robotpy_toolkit,
         projects_list.inv_kinematics,
