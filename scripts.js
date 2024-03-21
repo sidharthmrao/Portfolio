@@ -250,6 +250,19 @@ let projects_list = {
             "projects/laptop_stand.png"
         ],
         "description": "Laptop stand for my desk."
+    },
+
+    bass_maxx: {
+        "name": "Bass Maxx",
+        "org": "Cornell Makeathon 2024",
+        "org-link": "https://docs.google.com/presentation/d/1e5yuNSzkqcU7ivFWvr8YPGmrOF6IwFKIkY3PY9dzy_A/edit?usp=sharing",
+        "proj-link": "https://github.com/ethanuppal/makeathon-24",
+        "images": [
+            "projects/bass_maxx/image.png",
+            "projects/bass_maxx/backend_img.png",
+            "projects/bass_maxx/IMG_2429.gif",
+        ],
+        "description": "Recently made this project with my friends for a makeathon! We tried to mimic Baymax from Big Hero 6 by making a robot healthcare companion which dispenses candy and collects health data. We used a RPI, Arduino, servo, and a speaker, and also made our own GUI, candy dispensing mechanism, and an audio amplifier since there weren't any available."
     }
 }
 
@@ -280,6 +293,7 @@ let projects = {
         // projects_list.autobrake,
         // projects_list.laptop_mini_stand,
         // projects_list.mcdiver,
+        projects_list.bass_maxx,
         projects_list.n_body,
         projects_list.snake,
         projects_list.autoboard,
@@ -351,6 +365,11 @@ let projects = {
     "random": [
         projects_list.decision_maker,
         projects_list.random_sun_tzu_quote,
+    ],
+
+    "makeathons": [
+        projects_list.bass_maxx,
+        projects_list.snoway,
     ],
 
     "about": [about_page],
