@@ -260,7 +260,7 @@ let projects_list = {
         "images": [
             "projects/bass_maxx/image.png",
             "projects/bass_maxx/backend_img.png",
-            "projects/bass_maxx/IMG_2429.gif",
+            "projects/bass_maxx/vid.gif",
         ],
         "description": "Recently made this project with my friends for a makeathon! We tried to mimic Baymax from Big Hero 6 by making a robot healthcare companion which dispenses candy and collects health data. We used a RPI, Arduino, servo, and a speaker, and also made our own GUI, candy dispensing mechanism, and an audio amplifier since there weren't any available."
     }
