@@ -263,6 +263,17 @@ let projects_list = {
             "projects/bass_maxx/vid.gif",
         ],
         "description": "Recently made this project with my friends for a makeathon! We tried to mimic Baymax from Big Hero 6 by making a robot healthcare companion which dispenses candy and collects health data. We used a RPI, Arduino, servo, and a speaker, and also made our own GUI, candy dispensing mechanism, and an audio amplifier since there weren't any available."
+    },
+
+    lazy_wall: {
+        "name": "Lazy Wall",
+        "org": "",
+        "org-link": "",
+        "proj-link": "https://cad.onshape.com/documents/d8152abbfcde80591a72d9e5/w/61db43f805ed35f79ba0a951/e/adff74745d29f8dc07c86e43",
+        "images": [
+            "projects/lazy_wall/IMG_8831.jpg"
+        ],
+        "description": "I got lazy, now I don't have to hold my phone while watching stuff in bed."
     }
 }
 
@@ -356,6 +367,7 @@ let projects = {
     ],
 
     "3d": [
+        projects_list.lazy_wall,
         projects_list.laptop_mini_stand,
         projects_list.wire_router,
         projects_list.monitor_stand,
