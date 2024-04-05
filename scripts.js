@@ -535,7 +535,7 @@ function boot() {
 
     setTimeout(() => {
         document.body.style.opacity = 100;
-    }, 300);
+    }, 700);
 }
 
 window.onload = boot;
