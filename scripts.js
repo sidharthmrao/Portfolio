@@ -468,6 +468,7 @@ function interpretProject(project, num) {
     return project_html;
 }
 
+// Move to a new project_set state
 function replaceContent(newActive, waitTime=800) {
     // Current active button
     const activeButton = document.getElementById(current_active);
@@ -491,12 +492,12 @@ function replaceContent(newActive, waitTime=800) {
 
     let html = ``;
 
+    // Project parsing
     for (let project in projects[newActive]) {
         html += interpretProject(projects[newActive][project], project);
     }
 
     document.getElementById("subheading").style.opacity = '0';
-
     document.getElementById("background").classList.toggle('transition');
 
 
@@ -506,16 +507,17 @@ function replaceContent(newActive, waitTime=800) {
         html = `<p>Under Construction.</p>`;
     }
 
+    // Transitions and main div setting
     targetDiv.style.opacity = '0';
     document.getElementById("footer").style.opacity = '0';
     setTimeout(() => {
-            document.getElementById("subheading").innerText = activeName + (activeName === "About" ? " Me" : " Projects");
-            targetDiv.innerHTML = html;
-            targetDiv.style.opacity = '1';
-            document.getElementById("subheading").style.opacity = '1';
-            document.getElementById("footer").style.opacity = '1';
-            document.getElementById("background").classList.toggle('transition');;
-        }, waitTime);
+        document.getElementById("subheading").innerText = activeName + (activeName === "About" ? " Me" : " Projects");
+        targetDiv.innerHTML = html;
+        targetDiv.style.opacity = '1';
+        document.getElementById("subheading").style.opacity = '1';
+        document.getElementById("footer").style.opacity = '1';
+        document.getElementById("background").classList.toggle('transition');;
+    }, waitTime);
 }
 
 function boot() {
@@ -523,6 +525,7 @@ function boot() {
 
     document.body.style.opacity = 0;
 
+    // Setup url parameters for each individual state
     if (urlParams.has('active')) {
         const active = urlParams.get('active');
         replaceContent(active, 0);
