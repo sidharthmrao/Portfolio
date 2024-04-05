@@ -288,14 +288,15 @@ let projects_list = {
 
 let about_page = {
     "name": "Sidharth Rao",
-    "org": "",
-    "org-link": "",
+    "org": "Resume",
+    "org-link": "files/resume.pdf",
     "proj-link": "https://github.com/sidharthmrao",
+    "linkedin": "https://linkedin.com/in/sidharthmrao",
     "images": [
-        "projects/global_local_opt/images/image_1.png",
-        "projects/global_local_opt/images/image_2.gif",
+        "about/profilepic.jpg",
     ],
-    "description": "Created a custom simulation for occupancy grid-based planning algorithms. Implemented various algorithms like RRT*, LQR, MPC and developed my own which outperformed RRT* by a factor of 8. Connected everything to ROS simulators as well to incorporate into our autonomous vehicle pipeline."
+    "description": "Hi! I'm a Freshman in Cornell University's College of Engineering, and aim to major in CS and ECE. At Cornell, I'm on the Software-Autonomy subteam of the Cornell Electric Vehicles project team, a researcher for the People and Robots Teaching and Learning (PoRTaL) group, and a member of the Maker Club. I'm primarily interested in Computer Science, Robotics, Cybersecurity, and decentralized cryptosystems.",
+    "resume": "files/resume.pdf",
 };
 
 let projects = {
@@ -418,7 +419,19 @@ function interpretProject(project, num) {
 
     let project_html = `<div class="project">`
 
-    project_html += `<h3>` + name + ` <a href=` + org_link +  `>` + org + `</a> <a href="` + proj_link + `" target="_blank"><i class="fab fa-github-square"></i></a></h3>`;
+    project_html += `<h3>` + name + ` <a href=` + org_link +  `>` + org + `</a> <a href="` + proj_link + `" target="_blank"><i class="fab fa-github-square"></i></a>`;
+
+    if (project["linkedin"]) {
+        project_html += `<a href="` + project["linkedin"] + `"target="_blank"><i class="fab fa-linkedin"></i></a>`
+    }
+
+    // Do the same for a resume but with a link instead of icon
+    // if (project["resume"]) {
+    //     project_html += `<a href="` + project["resume"] + `"target="_blank">Resume</a>`
+    // }
+
+    project_html += `</h3>`;
+
     project_html += `<div style="margin-top: 15px;" id="` + 'Project' + num + `" class="carousel slide" data-ride="carousel" data-interval="false">`;
     project_html += `<div class="carousel-inner">`;
 
@@ -445,7 +458,7 @@ function interpretProject(project, num) {
             <span class="sr-only">Next</span>
         </a>
         `;
-    }  
+    }
 
     project_html += `
     </div><p style="margin-top: 20px;">` + description + `</p>

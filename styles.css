@@ -29,6 +29,13 @@ body {
   font-weight: bold;
   color: #F01AFF;
 }
+
+.fa-linkedin {
+  margin-left: 7px;
+  font-weight: bold;
+  color: white;
+}
+
 .project p {
   margin: 5px 0;
 }
