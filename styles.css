@@ -156,3 +156,8 @@ footer {
   transition: opacity .75s ease-in-out;
   color: #F01AFF;
 }
+
+.footer {
+  margin-top: 10px;
+  margin-bottom: 20px;;
+}
