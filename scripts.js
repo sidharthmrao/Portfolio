@@ -1,5 +1,5 @@
-let default_active = "featured";
-let current_active = "featured";
+let default_active = "about";
+let current_active = "about";
 
 let projects_list = {
     autoboard: {
