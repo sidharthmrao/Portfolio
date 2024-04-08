@@ -133,7 +133,7 @@ let projects_list = {
         "name": "Multivariable Calculus Jeopardy",
         "org": "",
         "org-link": "",
-        "proj-link": "https://www.iamsrao.com/jeopardy/",
+        "proj-link": "https://sidharthmrao.github.io/jeopardy/",
         "images": [
             "projects/jeopardy/jeo_1.png",
             "projects/jeopardy/jeo_2.png",
@@ -145,7 +145,7 @@ let projects_list = {
         "name": "Volume Perception Game",
         "org": "",
         "org-link": "",
-        "proj-link": "https://www.iamsrao.com/volume_perception/",
+        "proj-link": "https://sidharthmrao.github.io/volume_perception/",
         "images": [],
         "description": "Game my friend and I made to test peoples' volume perception skills, as kind of a social experiment."
     },
@@ -154,7 +154,7 @@ let projects_list = {
         "name": "Decision Maker",
         "org": "",
         "org-link": "",
-        "proj-link": "https://www.iamsrao.com/decision_maker/",
+        "proj-link": "https://sidharthmrao.github.io/decision_maker/",
         "images": [],
         "description": "Unironically helpful for me. What better way to know what you truly want than for someone to take away your choice?"
     },
@@ -163,7 +163,7 @@ let projects_list = {
         "name": "Random Sun Tzu Quote",
         "org": "",
         "org-link": "",
-        "proj-link": "https://www.iamsrao.com/random_sun_tzu/",
+        "proj-link": "https://sidharthmrao.github.io/random_sun_tzu/",
         "images": [],
         "description": "Life advice at the click of the reload button."
     },
@@ -172,7 +172,7 @@ let projects_list = {
         "name": "Flappy bird lol",
         "org": "",
         "org-link": "",
-        "proj-link": "https://www.iamsrao.com/FlappyBird/",
+        "proj-link": "https://sidharthmrao.github.io/FlappyBird/",
         "images": [
             "projects/flappy_bird/flappy.png",
         ],
