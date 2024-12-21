@@ -2,14 +2,13 @@ let default_active = "about";
 let current_active = "about";
 
 let projects_list = {
-    test_video: {
+    ackermann_ekf: {
         "name": "Custom Ackermann EKF",
         "org": "CEV",
         "org-link": "https://www.cornellelectricvehicles.org/",
         "proj-link": "https://github.com/cornellev/ackermann_filter",
-        "images": [],
+        "images": ["https://www.youtube.com/embed/VQM4dMmrEaE?si=SdmK5nhembZO4eF_", "projects/autoboard/images/image_1.png"],
         "description": "Custom ROS2 package (and backend library) for dynamically creating an Extended Kalman Filter from a selection of update models and sensors. Currently, the package features a yaml configuration which allows creating Ackermann geometry models and Cartesian update models, and piping in IMU data, wheel odometry data, or arbitrary odometry data.",
-        "embed": true,
         "embed_link": "https://www.youtube.com/embed/VQM4dMmrEaE?si=SdmK5nhembZO4eF_"
     },
 
@@ -312,7 +311,7 @@ let about_page = {
 
 let projects = {
     "featured": [
-        projects_list.test_video,
+        projects_list.ackermann_ekf,
         projects_list.global_local_planning,
         // projects_list.autobrake,
         // projects_list.laptop_mini_stand,
@@ -404,28 +403,28 @@ function addParam(v) {
     window.location.search += '&' + v;
 }
 
-function interpretEmbed(embed_link) {
+function interpretImage(src, active) {
+    const isEmbed = src.includes("youtube.com");
+    const content = isEmbed
+        ? `<iframe style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80%; height: 80%;" 
+                   src="${src}" 
+                   title="YouTube video player" 
+                   frameborder="0" 
+                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                   referrerpolicy="strict-origin-when-cross-origin" 
+                   allowfullscreen>
+           </iframe>`
+        : `<img style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); max-width: 80%; max-height: 100%; object-fit: contain;" 
+                 src="${src}" 
+                 alt="image">`;
+
     return `
-        <iframe style="width: 90%; height: 90%" src="` + embed_link + `" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <div class="carousel-item ${active ? 'active' : ''} carousel-container" style="position: relative; width: 100%; height: 0; padding-top: 50%;">
+            ${content}
+        </div>
     `;
 }
 
-function interpretImage(img, active) {
-    if (active) {
-        return `
-        <div class="carousel-item active carousel-container">
-            <img src="` + img + `" class="d-block w-100 carousel-img" alt="image">
-        </div>
-        `;
-    }
-
-    return `
-        <div class="carousel-item carousel-container">
-            <img src="` + img + `" class="d-block w-100 carousel-img" alt="image">
-        </div>
-        `;
-
-}
 
 function interpretProject(project, num) {
     const name = project["name"];
@@ -450,40 +449,35 @@ function interpretProject(project, num) {
 
     project_html += `</h3>`;
 
-    if (project["embed"]) {
-        project_html += `<div style="margin-top: 15px;" id="` + 'Project' + num + `" class="carousel slide" data-ride="carousel" data-interval="false">`;
+    if (images.length === 0) {
+        project_html += `<p>` + description + `</p></div><hr class="separator">`;
+        return project_html;
+    }
 
-        project_html += `<div style="display: flex; justify-content: center; align-items: center; width: 100%;">
-                            <div style="padding-left: 6%; width: 100%; max-width: 800px; height: auto; aspect-ratio: 16/9;">`;
-        project_html += interpretEmbed(project["embed_link"]);
+    project_html += `<div style="margin-top: 15px;" id="` + 'Project' + num + `" class="carousel slide" data-ride="carousel" data-interval="false">`;
+    project_html += `<div class="carousel-inner">`;
 
-        project_html += `</div></div>`;
-    } else {
-        project_html += `<div style="margin-top: 15px;" id="` + 'Project' + num + `" class="carousel slide" data-ride="carousel" data-interval="false">`;
-        project_html += `<div class="carousel-inner">`;
+    let active = true;
+    let size = 0;
+    for (let img in images) {
+        project_html += interpretImage(images[img], active);
+        active = false;
+        size += 1;
+    }
 
-        let active = true;
-        let size = 0;
-        for (let img in images) {
-            project_html += interpretImage(images[img], active);
-            active = false;
-            size += 1;
-        }
+    if (size > 1) {
+        project_html += `<a class="carousel-control-prev" href="#` + 'Project' + num + `" role="button" data-slide="prev">`;
+        project_html += `
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>`;
 
-        if (size > 1) {
-            project_html += `<a class="carousel-control-prev" href="#` + 'Project' + num + `" role="button" data-slide="prev">`;
-            project_html += `
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>`;
-    
-            project_html += `
-            <a class="carousel-control-next" href="#` + 'Project' + num + `" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-            `;
-        }
+        project_html += `
+        <a class="carousel-control-next" href="#` + 'Project' + num + `" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+        `;
     }
 
     project_html += `</div>`;
