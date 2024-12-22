@@ -11,17 +11,29 @@ let projects_list = {
         "description": "Custom ROS2 package (and backend library) for dynamically creating an Extended Kalman Filter from a selection of update models and sensors. Currently, the package features a yaml configuration which allows creating Ackermann geometry models and Cartesian update models, and piping in IMU data, wheel odometry data, or arbitrary odometry data.",
     },
 
+    mini_cars_autobrake: {
+        "name": "LiDAR AutoBrake",
+        "org": "CEV",
+        "org-link": "https://www.cornellelectricvehicles.org/",
+        "proj-link": "",
+        "images": [
+            "https://www.youtube.com/embed/KTYHf2zQwq4?si=mVagnbrcqllzfJ-k"
+        ],
+        "description": "Using our project team's custom-built mini-cars, I developed an autobraking system to take into account vehicle velocity and steering angle and react to imminent collisions. There are also 'cruise-control' and 'max-speed' modes which vary speed based on time to collision."
+    },
+
     mini_cars: {
         "name": "Mini Cars",
         "org": "CEV",
         "org-link": "https://www.cornellelectricvehicles.org/",
+        "proj-link": "https://github.com/cornellev/rc-brain",
         "images": [
             "projects/mini_cars/IMG20241019193334.jpg",
             "projects/mini_cars/IMG20241116104942.jpg",
             "projects/mini_cars/IMG20241019193331.jpg",
             "projects/mini_cars/IMG20241019193335.jpg",
         ],
-        "description": "We built some mini-cars from scratch to test our autonomy algorithms before scaling up to our real electric vehicle! The mini-cars (pictured is Mini Uno) feature an arduino uno, raspberry pi, wheel encoders + steering potentiometer, IMU, RPLidar, Zed2, and more! We made all of the systems on our vehicle from microcontroller code to serial communication, teleop, and ros integration, from the ground up. The newest version of Mini Uno also features a PCB to get rid of the messy wiring."
+        "description": "We built some mini-cars from scratch to test our autonomy algorithms before scaling up to our real electric vehicle! The mini-cars (pictured is Mini Uno) feature an arduino uno, raspberry pi, wheel encoders + steering potentiometer, IMU, RPLidar, Zed2, and more! We made all of the systems on our vehicle from microcontroller code to serial communication, teleop, and ROS2 integration from the ground up. The newest version of Mini Uno also features a PCB to get rid of the messy wiring."
     },
 
     local_planner: {
@@ -338,48 +350,33 @@ let projects = {
         projects_list.mini_cars,
         projects_list.local_planner,
         projects_list.global_planning,
-        // projects_list.autobrake,
-        // projects_list.laptop_mini_stand,
-        // projects_list.mcdiver,
+        projects_list.mini_cars_autobrake,
         projects_list.bass_maxx,
         projects_list.n_body,
-        projects_list.snake,
         projects_list.autoboard,
-        projects_list.maze_generator,
-        // projects_list.prng_system,
-        // projects_list.decentralized_voting,
-        // projects_list.robotpy_toolkit,
-        // projects_list.flappy_bird,
-        // projects_list.random_sun_tzu_quote,
-        // projects_list.decision_maker,
-        // projects_list.taskninja,
-        // projects_list.inv_kinematics,
-        // projects_list.jeopardy,
-        // projects_list.snoway,
-        // projects_list.cronicloud,
-        // projects_list.rovicare_ocr,
-        // projects_list.chess_bot
+        projects_list.lazy_wall,
+        projects_list.laptop_mini_stand,
+        projects_list.snake,
     ],
 
     "robotics": [
-        projects_list.global_planning,
-        projects_list.autobrake,
-        projects_list.autoboard,
+        projects_list.ackermann_ekf,
+        projects_list.mini_cars,
+        projects_list.mini_cars_autobrake,
         projects_list.robotpy_toolkit,
         projects_list.inv_kinematics,
     ],
 
     "pathfinding": [
+        projects_list.local_planner,
         projects_list.global_planning,
+        projects_list.autoboard,
         projects_list.mcdiver,
         projects_list.maze_generator,
     ],
 
     "simulation": [
-        projects_list.global_planning,
         projects_list.n_body,
-        projects_list.autoboard,
-        projects_list.inv_kinematics,
     ],
 
     "cryptography": [
@@ -395,7 +392,6 @@ let projects = {
     ],
 
     "fun": [
-        projects_list.n_body,
         projects_list.snake,
         projects_list.flappy_bird,
         projects_list.jeopardy,
