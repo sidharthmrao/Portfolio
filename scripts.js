@@ -2,6 +2,51 @@ let default_active = "about";
 let current_active = "about";
 
 let projects_list = {
+    ackermann_ekf: {
+        "name": "Custom Ackermann EKF",
+        "org": "CEV",
+        "org-link": "https://www.cornellelectricvehicles.org/",
+        "proj-link": "https://github.com/cornellev/ackermann_filter",
+        "images": ["https://www.youtube.com/embed/VQM4dMmrEaE?si=SdmK5nhembZO4eF_"],
+        "description": "Custom ROS2 package (and backend library) for dynamically creating an Extended Kalman Filter from a selection of update models and sensors. Currently, the package features a yaml configuration which allows creating Ackermann geometry models and Cartesian update models, and piping in IMU data, wheel odometry data, or arbitrary odometry data.",
+    },
+
+    mini_cars_autobrake: {
+        "name": "LiDAR AutoBrake",
+        "org": "CEV",
+        "org-link": "https://www.cornellelectricvehicles.org/",
+        "proj-link": "",
+        "images": [
+            "https://www.youtube.com/embed/KTYHf2zQwq4?si=mVagnbrcqllzfJ-k"
+        ],
+        "description": "Using our project team's custom-built mini-cars, I developed an autobraking system to take into account vehicle velocity and steering angle and react to imminent collisions. There are also 'cruise-control' and 'max-speed' modes which vary speed based on time to collision."
+    },
+
+    mini_cars: {
+        "name": "Mini Cars",
+        "org": "CEV",
+        "org-link": "https://www.cornellelectricvehicles.org/",
+        "proj-link": "https://github.com/cornellev/rc-brain",
+        "images": [
+            "projects/mini_cars/IMG20241019193334.jpg",
+            "projects/mini_cars/IMG20241116104942.jpg",
+            "projects/mini_cars/IMG20241019193331.jpg",
+            "projects/mini_cars/IMG20241019193335.jpg",
+        ],
+        "description": "We built some mini-cars from scratch to test our autonomy algorithms before scaling up to our real electric vehicle! The mini-cars (pictured is Mini Uno) feature an arduino uno, raspberry pi, wheel encoders + steering potentiometer, IMU, RPLidar, Zed2, and more! We made all of the systems on our vehicle from microcontroller code to serial communication, teleop, and ROS2 integration from the ground up. The newest version of Mini Uno also features a PCB to get rid of the messy wiring."
+    },
+
+    local_planner: {
+        "name": "MPC Local Planner",
+        "org": "CEV",
+        "org-link": "https://www.cornellelectricvehicles.org/",
+        "proj-link": "https://github.com/cornellev/Local_and_Global_Planning",
+        "images": [
+            "projects/local_planner/cars_animation.gif",
+        ],
+        "description": "I made an MPC local planner implementation with a Scipy optimizer in the backend for our autonomous vehicles. The planner converges on average in around 40 ms! Also made a mini-simulation with matplotlib for visualization. Currently rewriting in ROS2 C++ to run on our real car, and working on obstacle reduction algorithms for speedup.",
+    },
+
     autoboard: {
         "name": "AutoBoard",
         "org": "Choate Robotics",
@@ -10,7 +55,7 @@ let projects_list = {
         "images": [
             "projects/autoboard/images/image_1.png",
         ],
-        "description": "Created a custom simulation for occupancy grid-based planning algorithms. Implemented various algorithms like RRT*, LQR, MPC and developed my own which outperformed RRT* by a factor of 8. Connected everything to ROS simulators as well to incorporate into our autonomous vehicle pipeline."
+        "description": ""
     },
 
     decentralized_voting: {
@@ -31,8 +76,8 @@ let projects_list = {
         "description": "Project I worked on for my Cryptography DS as a replacement for one-time-pad, which used a set random seed to regenerate new one-time-pad codes, allowing for users to indefinitely share messages with n-bit security. Used Python for the final product."
     },
 
-    global_local_planning: {
-        "name": "Global and Local Planning",
+    global_planning: {
+        "name": "Global Planning Algorithms",
         "org": "CEV",
         "org-link": "https://www.cornellelectricvehicles.org/",
         "proj-link": "https://github.com/cornellev/Local_and_Global_Planning",
@@ -40,7 +85,7 @@ let projects_list = {
             "projects/global_local_opt/images/image_1.png",
             "projects/global_local_opt/images/image_2.gif",
         ],
-        "description": "Created a custom simulation for occupancy grid-based planning algorithms. Implemented various algorithms like RRT*, LQR, MPC and developed my own which outperformed RRT* by a factor of 8. Connected everything to ROS simulators as well to incorporate into our autonomous vehicle pipeline."
+        "description": "Created a custom simulation for occupancy grid-based planning algorithms. Implemented various algorithms like RRT* and variations, and created my own algorithm combining Dijkstra's and RRT*! Experimented with Bezier curves and a Casadi based local planner to run MPC using global waypoints."
     },
 
     robotpy_toolkit: {
@@ -58,7 +103,7 @@ let projects_list = {
         "org-link": "",
         "proj-link": "https://editor.p5js.org/sidharthmrao/sketches/XpaS7dwnt",
         "images": ["projects/inv_kinematics/inv.png"],
-        "description": "Project for my linear algebra class in which a partner and I used gradient descent and a formula derived using Jacobian inverses to simulate a robot arm optimally routing to a target."
+        "description": "Project for my highschool linear algebra class in which a partner and I used gradient descent and a formula derived using Jacobian inverses to simulate a robot arm optimally routing to a target."
     },
 
     maze_generator: {
@@ -287,7 +332,7 @@ let projects_list = {
 // },
 
 let about_page = {
-    "name": "Sidharth Rao",
+    "name": "",
     "org": "Resume",
     "org-link": "files/resume.pdf",
     "proj-link": "https://github.com/sidharthmrao",
@@ -295,55 +340,43 @@ let about_page = {
     "images": [
         "about/profilepic.jpg",
     ],
-    "description": "Hi! I'm a Freshman in Cornell University's College of Engineering, and aim to major in CS and ECE. At Cornell, I'm on the Software-Autonomy subteam of the Cornell Electric Vehicles project team, a researcher for the People and Robots Teaching and Learning (PoRTaL) group, and a member of the Maker Club. I'm primarily interested in Computer Science, Robotics, Cybersecurity, and decentralized cryptosystems.",
+    "description": "Hi! I'm a Sophomore in Cornell University's College of Engineering, and aim to major in CS and ECE. At Cornell, I'm Autonomy Co-Lead on the Cornell Electric Vehicles project team, a researcher for the Collective Embodied Intelligence Lab (CEI), and a member of the Maker Club. I'm primarily interested in localization algorithms, control theory, and decentralized robotics! I also really enjoy 3d-printing and working on random projects in my free time.",
     "resume": "files/resume.pdf",
 };
 
 let projects = {
     "featured": [
-        projects_list.global_local_planning,
-        // projects_list.autobrake,
-        // projects_list.laptop_mini_stand,
-        // projects_list.mcdiver,
+        projects_list.ackermann_ekf,
+        projects_list.mini_cars,
+        projects_list.local_planner,
+        projects_list.global_planning,
+        projects_list.mini_cars_autobrake,
         projects_list.bass_maxx,
         projects_list.n_body,
-        projects_list.snake,
         projects_list.autoboard,
-        projects_list.maze_generator,
-        // projects_list.prng_system,
-        // projects_list.decentralized_voting,
-        // projects_list.robotpy_toolkit,
-        // projects_list.flappy_bird,
-        // projects_list.random_sun_tzu_quote,
-        // projects_list.decision_maker,
-        // projects_list.taskninja,
-        // projects_list.inv_kinematics,
-        // projects_list.jeopardy,
-        // projects_list.snoway,
-        // projects_list.cronicloud,
-        // projects_list.rovicare_ocr,
-        // projects_list.chess_bot
+        projects_list.lazy_wall,
+        projects_list.laptop_mini_stand,
+        projects_list.snake,
     ],
 
     "robotics": [
-        projects_list.global_local_planning,
-        projects_list.autobrake,
-        projects_list.autoboard,
+        projects_list.ackermann_ekf,
+        projects_list.mini_cars,
+        projects_list.mini_cars_autobrake,
         projects_list.robotpy_toolkit,
         projects_list.inv_kinematics,
     ],
 
     "pathfinding": [
-        projects_list.global_local_planning,
+        projects_list.local_planner,
+        projects_list.global_planning,
+        projects_list.autoboard,
         projects_list.mcdiver,
         projects_list.maze_generator,
     ],
 
     "simulation": [
-        projects_list.global_local_planning,
         projects_list.n_body,
-        projects_list.autoboard,
-        projects_list.inv_kinematics,
     ],
 
     "cryptography": [
@@ -359,7 +392,6 @@ let projects = {
     ],
 
     "fun": [
-        projects_list.n_body,
         projects_list.snake,
         projects_list.flappy_bird,
         projects_list.jeopardy,
@@ -392,22 +424,28 @@ function addParam(v) {
     window.location.search += '&' + v;
 }
 
-function interpretImage(img, active) {
-    if (active) {
-        return `
-        <div class="carousel-item active carousel-container">
-            <img src="` + img + `" class="d-block w-100 carousel-img" alt="image">
-        </div>
-        `;
-    }
+function interpretImage(src, active) {
+    const isEmbed = src.includes("youtube.com");
+    const content = isEmbed
+        ? `<iframe style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80%; height: 80%;" 
+                   src="${src}" 
+                   title="YouTube video player" 
+                   frameborder="0" 
+                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                   referrerpolicy="strict-origin-when-cross-origin" 
+                   allowfullscreen>
+           </iframe>`
+        : `<img style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); max-width: 80%; max-height: 100%; object-fit: contain;" 
+                 src="${src}" 
+                 alt="image">`;
 
     return `
-        <div class="carousel-item carousel-container">
-            <img src="` + img + `" class="d-block w-100 carousel-img" alt="image">
+        <div class="carousel-item ${active ? 'active' : ''} carousel-container" style="position: relative; width: 100%; height: 0; padding-top: 50%;">
+            ${content}
         </div>
-        `;
-
+    `;
 }
+
 
 function interpretProject(project, num) {
     const name = project["name"];
@@ -425,12 +463,12 @@ function interpretProject(project, num) {
         project_html += `<a href="` + project["linkedin"] + `"target="_blank"><i class="fab fa-linkedin"></i></a>`
     }
 
-    // Do the same for a resume but with a link instead of icon
-    // if (project["resume"]) {
-    //     project_html += `<a href="` + project["resume"] + `"target="_blank">Resume</a>`
-    // }
-
     project_html += `</h3>`;
+
+    if (images.length === 0) {
+        project_html += `<p>` + description + `</p></div><hr class="separator">`;
+        return project_html;
+    }
 
     project_html += `<div style="margin-top: 15px;" id="` + 'Project' + num + `" class="carousel slide" data-ride="carousel" data-interval="false">`;
     project_html += `<div class="carousel-inner">`;
@@ -442,8 +480,6 @@ function interpretProject(project, num) {
         active = false;
         size += 1;
     }
-
-    project_html += `</div>`;
 
     if (size > 1) {
         project_html += `<a class="carousel-control-prev" href="#` + 'Project' + num + `" role="button" data-slide="prev">`;
@@ -459,6 +495,8 @@ function interpretProject(project, num) {
         </a>
         `;
     }
+
+    project_html += `</div>`;
 
     project_html += `
     </div><p style="margin-top: 20px;">` + description + `</p>
@@ -516,7 +554,7 @@ function replaceContent(newActive, waitTime=800) {
         targetDiv.style.opacity = '1';
         document.getElementById("subheading").style.opacity = '1';
         document.getElementById("footer").style.opacity = '1';
-        document.getElementById("background").classList.toggle('transition');;
+        document.getElementById("background").classList.toggle('transition');
     }, waitTime);
 }
 
